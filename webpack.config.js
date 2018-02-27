@@ -13,8 +13,12 @@ const paths = {
 module.exports = {
   context: paths.src,
   entry: {
-    basic: './app.js',
-    style: './main.scss'
+    chapter1:'./chapter1.js',
+    commonstyle: './main.scss',
+    vendor: [
+      'd3',
+      'underscore'
+    ]
   },
   output: {
     filename: '[name].bundle.js',
