@@ -12,9 +12,12 @@ const paths = {
 
 module.exports = {
   context: paths.src,
-  entry: ['./app.js', './main.scss'],
+  entry: {
+    basic: './app.js',
+    style: './main.scss'
+  },
   output: {
-    filename: 'app.bundle.js',
+    filename: '[name].bundle.js',
     path: paths.dist,
     publicPath: 'dist',
   },
