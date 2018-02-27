@@ -1,9 +1,6 @@
 import * as d3 from 'd3'
 import _ from 'underscore'
 
-console.log("ddddddddddddddd");
-console.log(_.now());
-
 // Selecting and appending elements
 d3.select('#root')
   .append('h5')
@@ -31,29 +28,43 @@ d3.select('#root')
 
 
 
-    var width = 400;
-    var height = 200;
-    //Create SVG Element
+    var widthXY = 400, heightXY = 600;
+    var xlist = _.pluck(data,"sprint");
+    var ylist = _.pluck(data,"points");
+
+    var dataXY = [10, 15, 20, 25, 30];
     var svg = d3.select("#root")
-    .append("svg")
-    .attr("width",width)
-    .attr("height",height);
+                .append("svg")
+                .attr("width", widthXY)
+                .attr("height", 1200);
 
-    var ylist = _.pluck(data,"points"),xlist = _.pluck(data,"sprint");
-    console.log(ylist);
-    console.log(xlist);
+    var xscaleXY = d3.scaleLinear()
+                   .domain([0, d3.max(xlist)])
+                   .range([0, widthXY - 100]);
 
-    var yscale = d3.scaleLinear().domain(d3.min(ylist),d3.max(ylist)).range([0,width-100]), xscale =  d3.scaleLinear().domain(d3.min(xlist),d3.max(xlist)).range([0,height-100]);
+    var yscaleXY = d3.scaleLinear()
+                   .domain([0, d3.max(ylist)])
+                   .range([heightXY/2, 0]);
 
-    //var y_asis = d3.axisLeft().scale(yscale);
-    var x_asis = d3.axisBottom().scale(xscale);
+    var x_axisXY = d3.axisBottom()
+                   .scale(xscaleXY);
 
-    var xAxisTranslate = height/2 + 10;
+    var y_axisXY = d3.axisLeft()
+                   .scale(yscaleXY);
 
+    svg.append("g")
+       .attr("transform", "translate(50, 10)")
+       .call(y_axisXY);
 
+       svg.append("g")
+       .attr("transform", "translate(50,-200)").attr("y1",heightXY)
+       .call(y_axisXY);
 
-    svg.append("g").attr("transform", "translate(50, " + xAxisTranslate  +")").call(x_asis);
-    //svg.append("g").call(y_asis);
+    var xAxisTranslateXY = heightXY/2 + 10;
+
+    svg.append("g")
+            .attr("transform", "translate(50, " + xAxisTranslateXY  +")")
+            .call(x_axisXY)
   
 
 // Loading external data
