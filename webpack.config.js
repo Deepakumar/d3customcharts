@@ -15,6 +15,8 @@ module.exports = {
   entry: {
     chapter1:'./chapter1.js',
     commonstyle: './main.scss',
+    scales: './scales.js',
+    barchart: './barchart.js',
     vendor: [
       'd3',
       'underscore'
