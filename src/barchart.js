@@ -10,10 +10,12 @@ function dataReady(data){
     //console.log(data);
 
     data.forEach(d => {
-        d.date = d3.timeParse("Y%m%d")(d.date);
-        console.log(d.date);
+        console.log(d);
+        // d.date = d3.timeParse("Y%m%d")(d.date);
+        // console.log(d.date);
         d.date = new Date(d.date);
-        ++d[city];
+        console.log(d.date);
+        // ++d[city];
     });
 
     //Scales
