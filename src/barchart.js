@@ -14,18 +14,9 @@ function dataReady(data){
     .attr("width",width);
 
     data.forEach(d => {
-<<<<<<< HEAD
-        console.log(d);
-        // d.date = d3.timeParse("Y%m%d")(d.date);
-        // console.log(d.date);
-        d.date = new Date(d.date);
-        console.log(d.date);
-        // ++d[city];
-=======
          var parseTime = d3.timeParse("%Y%m%d");
         var d3date = parseTime(d.date);
         d.date = new Date(d3date);
->>>>>>> 1b16973729a78c6be366acf29393d7b99e8c4542
     });
 
     //Scales
