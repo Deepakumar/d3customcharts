@@ -21,6 +21,7 @@ module.exports = {
     piechart: './piechart.js',
     piechart: './piechart.js',
     linechart: './linechart.js',
+    linechartstack: './linechartstack.js',
     vendor: [
       'd3',
       'underscore'
