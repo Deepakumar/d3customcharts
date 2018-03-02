@@ -17,6 +17,10 @@ module.exports = {
     commonstyle: './main.scss',
     scales: './scales.js',
     barchart: './barchart.js',
+    shapes: './shapes.js',
+    piechart: './piechart.js',
+    piechart: './piechart.js',
+    linechart: './linechart.js',
     vendor: [
       'd3',
       'underscore'
