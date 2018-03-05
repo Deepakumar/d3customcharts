@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const paths = {
   src: path.join(__dirname, 'src'),
-  dist: path.join(__dirname, 'dist'),
+  dist: {root: path.join(__dirname, 'dist'), script:path.join(__dirname,'dist','script'), data:path.join(__dirname,'dist','data') },
   data: path.join(__dirname, 'data')
 }
 
@@ -22,6 +22,10 @@ module.exports = {
     piechart: './piechart.js',
     linechart: './linechart.js',
     linechartstack: './linechartstack.js',
+    updateandexit: './updateandexit.js',
+    generalupdatepattern: './generalupdatepattern.js',
+    transitionbar: './transitionbar.js',
+    transformcolor: './transformcolor.js',
     vendor: [
       'd3',
       'underscore'
@@ -29,7 +33,7 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: paths.dist,
+    path: paths.dist.script,
     publicPath: 'dist',
   },
   module: {
@@ -57,14 +61,13 @@ module.exports = {
     stats: 'errors-only',
   },
   plugins: [
-    new ExtractTextPlugin({
-      filename: 'main.bundle.css',
+    new ExtractTextPlugin('../style/main.bundle.css',{
       allChunks: true,
     }),
     new CopyWebpackPlugin([
       {
         from: paths.data,
-        to: paths.dist + '/data'
+        to: paths.dist.data
       }
     ])
   ],
