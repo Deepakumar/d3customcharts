@@ -4,7 +4,7 @@
   "description": "Basic D3.js project for learning purposes",
   "main": "src/app.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --progress",
+    "start": "webpack-dev-server",
     "build": "webpack -p --config webpack.config.js --hide-modules"
   },
   "repository": {
