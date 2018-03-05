@@ -22,6 +22,10 @@ module.exports = {
     piechart: './piechart.js',
     linechart: './linechart.js',
     linechartstack: './linechartstack.js',
+    updateandexit: './updateandexit.js',
+    generalupdatepattern: './generalupdatepattern.js',
+    transitionbar: './transitionbar.js',
+    transformcolor: './transformcolor.js',
     vendor: [
       'd3',
       'underscore'
