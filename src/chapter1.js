@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 import _ from 'underscore'
 
-var rectwidth = 50;
+var rectwidth = 70;
 var height = 300;
 var data =[10,40,60,200,40];
 
