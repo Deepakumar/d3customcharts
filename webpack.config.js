@@ -6,12 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const paths = {
   src: path.join(__dirname, 'src'),
-  dist: { 
-    root: path.join(__dirname, 'dist'),
-    script:path.join(__dirname, 'dist','script'),
-    style:path.join(__dirname, 'dist','style'),
-    data:path.join(__dirname, 'dist','data')
-  },
+  dist: {root: path.join(__dirname, 'dist'), script:path.join(__dirname,'dist','script'), data:path.join(__dirname,'dist','data') },
   data: path.join(__dirname, 'data')
 }
 
@@ -66,7 +61,7 @@ module.exports = {
     stats: 'errors-only',
   },
   plugins: [
-    new ExtractTextPlugin('script/main.bundle.css',{
+    new ExtractTextPlugin('../style/main.bundle.css',{
       allChunks: true,
     }),
     new CopyWebpackPlugin([

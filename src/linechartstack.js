@@ -1,5 +1,6 @@
 import * as d3 from 'd3'
 import _ from 'underscore'
+import lodash from 'lodash'
 
 var city = "San Francisco";
 var width = 800;

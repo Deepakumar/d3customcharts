@@ -19,6 +19,8 @@ const rectWidth = 50;
       let bars = svg.selectAll('rect')
         .data(data, d => d); // key function
 
+        console.dir(bars);
+
       // exit
       bars.exit().remove();
 
