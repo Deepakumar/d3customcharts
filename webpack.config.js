@@ -25,6 +25,7 @@ module.exports = {
     transformcolor: './transformcolor.js',
     transitionbar: './transitionbar.js',
     updateandexit: './updateandexit.js',
+    thumbnail: './thumbnail.js',
     vendor: [
       'd3',
       'underscore'
