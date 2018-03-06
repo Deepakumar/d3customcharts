@@ -17,6 +17,14 @@ module.exports = {
     commonstyle: './main.scss',
     scales: './scales.js',
     barchart: './barchart.js',
+    generalupdatepattern: './generalupdatepattern.js',
+    linechart: './linechart.js',
+    linechartstack: './linechartstack.js',
+    piechart: './piechart.js',
+    shapes: './shapes.js',
+    transformcolor: './transformcolor.js',
+    transitionbar: './transitionbar.js',
+    updateandexit: './updateandexit.js',
     vendor: [
       'd3',
       'underscore'
